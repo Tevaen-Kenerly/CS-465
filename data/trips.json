@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Hawaii Getaway",
+    "destination": "Honolulu, HI",
+    "duration": "7 days",
+    "price": "$1999",
+    "description": "Enjoy beaches, hiking, and nightlife."
+  },
+  {
+    "name": "Alaskan Adventure",
+    "destination": "Anchorage, AK",
+    "duration": "5 days",
+    "price": "$1499",
+    "description": "Explore glaciers and wildlife."
+  }
+]

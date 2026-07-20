@@ -1,0 +1,23 @@
+{{> header}}
+
+<main class="container">
+  <h1>{{title}}</h1>
+
+  {{#if trips}}
+    <div class="trip-list">
+      {{#each trips}}
+        <article class="trip-card">
+          <h2>{{this.name}}</h2>
+          <p><strong>Destination:</strong> {{this.destination}}</p>
+          <p><strong>Duration:</strong> {{this.duration}}</p>
+          <p><strong>Price:</strong> {{this.price}}</p>
+          <p>{{this.description}}</p>
+        </article>
+      {{/each}}
+    </div>
+  {{else}}
+    <p>No trips available.</p>
+  {{/if}}
+</main>
+
+{{> footer}}

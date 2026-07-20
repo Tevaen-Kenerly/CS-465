@@ -1,0 +1,25 @@
+{
+  "name": "cs-465",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tevaen-Kenerly/CS-465.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Tevaen-Kenerly/CS-465/issues"
+  },
+  "homepage": "https://github.com/Tevaen-Kenerly/CS-465#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "hbs": "^4.2.1"
+  }
+}
