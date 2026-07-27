@@ -1,29 +1,22 @@
-const fs = require('fs');
-const path = require('path');
+const axios = require('axios');
 
-const tripsFile = path.join(__dirname, '..', '..', 'data', 'trips.json');
-
-const travelList = (req, res) => {
-  fs.readFile(tripsFile, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading trips.json:', err);
-      return res.render('travel', { title: 'Travel', trips: [] });
-    }
-
-    let trips = [];
-    try {
-      trips = JSON.parse(data);
-    } catch (parseErr) {
-      console.error('Error parsing trips.json:', parseErr);
-    }
+const travellist = async (req, res) => {
+  try {
+    const response = await axios.get('http://localhost:3000/api/trips');
 
     res.render('travel', {
-      title: 'Travel',
-      trips: trips
+      title: 'Available Trips',
+      trips: response.data
     });
-  });
+  } catch (err) {
+    console.error('Error fetching trips from API:', err.message);
+    res.render('travel', {
+      title: 'Available Trips',
+      trips: []
+    });
+  }
 };
 
 module.exports = {
-  travelList
+  travellist
 };

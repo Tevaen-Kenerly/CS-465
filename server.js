@@ -2,10 +2,18 @@ const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
 
+// CREATE APP 
 const app = express();
 const PORT = 3000;
 
-// ROUTES
+// CONNECT TO DB
+require('./app_api/models/db');
+
+// API ROUTES
+const apiRoutes = require('./app_api/routes/index');
+app.use('/api', apiRoutes);
+
+// SERVER ROUTES
 const travelerRoutes = require('./app_server/routes/index');
 app.use('/', travelerRoutes);
 
