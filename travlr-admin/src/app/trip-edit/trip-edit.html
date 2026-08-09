@@ -1,0 +1,51 @@
+<h1>Edit Trip</h1>
+
+<p>NAME: {{ trip.name }}</p>
+<p>DESTINATION: {{ trip.destination }}</p>
+
+<form (ngSubmit)="saveTrip()">
+
+  <div>
+    <label>Name</label>
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="trip.name">
+  </div>
+
+  <div>
+    <label>Destination</label>
+    <input
+      type="text"
+      name="destination"
+      [(ngModel)]="trip.destination">
+  </div>
+
+  <div>
+    <label>Duration</label>
+    <input
+      type="text"
+      name="duration"
+      [(ngModel)]="trip.duration">
+  </div>
+
+  <div>
+    <label>Price</label>
+    <input
+      type="text"
+      name="price"
+      [(ngModel)]="trip.price">
+  </div>
+
+  <div>
+    <label>Description</label>
+    <textarea
+      name="description"
+      [(ngModel)]="trip.description"></textarea>
+  </div>
+
+  <button type="submit">
+    Save Changes
+  </button>
+
+</form>
