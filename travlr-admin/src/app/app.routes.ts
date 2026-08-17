@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { TripList } from './trip-list/trip-list';
 import { TripEdit } from './trip-edit/trip-edit';
 import { TripAdd } from './trip-add/trip-add';
-
+import { Login } from './login/login';
 export const routes: Routes = [
   {
     path: '',
@@ -19,5 +19,9 @@ export const routes: Routes = [
   {
   path: 'trip-add',
   component: TripAdd
+},
+{
+  path: 'login',
+  component: Login
 }
 ];

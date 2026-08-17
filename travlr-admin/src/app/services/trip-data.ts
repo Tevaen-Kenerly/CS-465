@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Trip } from '../models/trip-model';
 
@@ -12,6 +12,14 @@ export class TripData {
 
   constructor(private http: HttpClient) {}
 
+  private getHeaders(): HttpHeaders {
+    const token = localStorage.getItem('travlr-token');
+
+    return new HttpHeaders({
+      Authorization: `Bearer ${token}`
+    });
+  }
+
   getTrips(): Observable<Trip[]> {
     return this.http.get<Trip[]>(this.apiUrl);
   }
@@ -21,19 +29,25 @@ export class TripData {
   }
 
   addTrip(trip: Trip): Observable<any> {
-    return this.http.post<any>(this.apiUrl, trip);
+    return this.http.post<any>(
+      this.apiUrl,
+      trip,
+      { headers: this.getHeaders() }
+    );
   }
 
   updateTrip(trip: any): Observable<any> {
     return this.http.put<any>(
       `${this.apiUrl}/${trip._id}`,
-      trip
+      trip,
+      { headers: this.getHeaders() }
     );
   }
 
   deleteTrip(id: string): Observable<any> {
     return this.http.delete<any>(
-      `${this.apiUrl}/${id}`
+      `${this.apiUrl}/${id}`,
+      { headers: this.getHeaders() }
     );
   }
 }

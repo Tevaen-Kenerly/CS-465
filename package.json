@@ -23,6 +23,9 @@
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "hbs": "^4.2.1",
-    "mongoose": "^9.8.0"
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.8.0",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1"
   }
 }

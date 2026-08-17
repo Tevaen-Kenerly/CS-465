@@ -1,0 +1,38 @@
+<div class="container mt-5">
+
+    <h2>Admin Login</h2>
+
+    <form (ngSubmit)="login()">
+
+        <div class="mb-3">
+
+            <label>Username</label>
+
+            <input
+                class="form-control"
+                name="username"
+                [(ngModel)]="credentials.username">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                class="form-control"
+                name="password"
+                [(ngModel)]="credentials.password">
+
+        </div>
+
+        <button class="btn btn-primary">
+
+            Login
+
+        </button>
+
+    </form>
+
+</div>
